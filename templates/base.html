@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}Login{% endblock %}</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: #f0f2f5;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  }
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 28px;
+    color: #1a1a1a;
+  }
+  label {
+    display: block;
+    font-size: .85rem;
+    color: #555;
+    margin-bottom: 6px;
+  }
+  input {
+    width: 100%;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: .95rem;
+    outline: none;
+    margin-bottom: 16px;
+    transition: border-color .2s;
+  }
+  input:focus { border-color: #1877f2; }
+  .btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+  .btn:hover { opacity: .9; }
+  .btn-blue  { background: #1877f2; color: white; }
+  .btn-green { background: #42b72a; color: white; }
+  .error   { background:#fff0f0; border:1px solid #ffb3b3; color:#cc0000; padding:10px 14px; border-radius:8px; font-size:.85rem; margin-bottom:16px; }
+  .success { background:#f0fff4; border:1px solid #b3f0c2; color:#1a7a3a; padding:10px 14px; border-radius:8px; font-size:.85rem; margin-bottom:16px; }
+  .divider { text-align:center; color:#999; margin:18px 0; font-size:.85rem; }
+  .link-btn {
+    display:block; width:100%; padding:12px; border:1.5px solid #ddd;
+    border-radius:8px; text-align:center; text-decoration:none;
+    color:#555; font-size:.9rem; font-weight:bold; transition:.2s;
+  }
+  .link-btn:hover { background:#f5f5f5; }
+  .query-box {
+    margin-top: 20px;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: monospace;
+    font-size: .78rem;
+    color: #b26a00;
+    word-break: break-all;
+  }
+  .query-box .qlabel {
+    font-size: .7rem;
+    color: #999;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .query-box.safe { background:#e8f5e9; border-color:#a5d6a7; color:#2e7d32; }
+  .badge {
+    display:block; text-align:center; font-size:.75rem; font-weight:bold;
+    padding:4px 12px; border-radius:20px; margin-bottom:20px;
+    letter-spacing:1px; text-transform:uppercase;
+  }
+  .badge-vuln { background:#fff0f0; color:#cc0000; border:1px solid #ffb3b3; }
+  .badge-safe { background:#f0fff4; color:#1a7a3a; border:1px solid #b3f0c2; }
+</style>
+</head>
+<body>
+<div class="card">
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>

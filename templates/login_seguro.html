@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Login Seguro{% endblock %}
+{% block content %}
+
+<span class="badge badge-safe">✓ Login Seguro</span>
+<h2>Login</h2>
+
+{% if error %}<div class="error">{{ error }}</div>{% endif %}
+
+<label>Usuario:</label>
+<input type="text" id="u" placeholder="Usuario">
+
+<label>Contraseña:</label>
+<input type="password" id="p" placeholder="Contraseña">
+
+<button class="btn btn-green" onclick="enviar()">Login</button>
+
+{% if query %}
+<div class="query-box safe">
+  <div class="qlabel">✓ Consulta parametrizada</div>
+  {{ query }}
+</div>
+{% endif %}
+
+<div class="divider">─────── o ───────</div>
+<a href="/register" class="link-btn">Crear cuenta</a>
+<div class="divider" style="margin-top:12px; font-size:.75rem;">
+  <a href="/login" style="color:#cc0000;">Ver versión vulnerable →</a>
+</div>
+
+<script>
+function enviar(){
+  const f = document.createElement('form');
+  f.method = 'POST'; f.action = '/login-seguro';
+  [['username', document.getElementById('u').value],
+   ['password', document.getElementById('p').value]].forEach(([k,v]) => {
+    const i = document.createElement('input');
+    i.name = k; i.value = v; f.appendChild(i);
+  });
+  document.body.appendChild(f); f.submit();
+}
+</script>
+{% endblock %}
